@@ -1,19 +1,17 @@
 
 import streamlit as st
-import os
 import googlemaps
 from geopy.geocoders import GoogleV3
 import folium
 from streamlit_folium import folium_static
 from itertools import permutations
 import streamlit.components.v1 as components
-from dotenv import load_dotenv
 
 
-load_dotenv()
 
 
-API_KEY = st.write("API_KEY", st.secrets["GOOGLE_MAPS_API_KEY"])
+
+API_KEY = st.secrets["GOOGLE_MAPS_API_KEY"]
 gmaps = googlemaps.Client(key=API_KEY)
 geolocator = GoogleV3(api_key=API_KEY)
 
