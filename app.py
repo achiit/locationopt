@@ -10,13 +10,10 @@ import streamlit.components.v1 as components
 from dotenv import load_dotenv
 
 
-# Initialize Google Maps client
-# API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', 'AIzaSyALBJu7cdnA9HCglhQLNlbxVwSEwvaZRgA')
-# API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 load_dotenv()
 
-# Get Google Maps API key from environment variables
-API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
+
+API_KEY = st.write("API_KEY", st.secrets["GOOGLE_MAPS_API_KEY"])
 gmaps = googlemaps.Client(key=API_KEY)
 geolocator = GoogleV3(api_key=API_KEY)
 
